@@ -1,38 +1,19 @@
 ---
 title: Hello World
+date: 2021-02-22 18:27:10
+tags: OIer
+cover: http://i1.fuimg.com/733524/4ba584c068df3b93.png
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
-## Quick Start
+## 经过了long long time的时间，终于让我的博客成功上线！（鼓掌）
+安装--安装失败--寻找旧版本安装--学习git语言--荒原同志鼓励我继续（并不）
+--完成--备份--备份失败--不小心删了源文件--经过骚操作从GitHub上下了回来
+--完成。
 
-### Create a new post
+这就是你看到的这个网站的全部精力，感谢阅读这篇浪费时间的测试文章。
 
-``` bash
-$ hexo new "My New Post"
-```
+(摊手)
 
-More info: [Writing](https://hexo.io/docs/writing.html)
+(告辞）
 
-### Run server
-
-``` bash
-$ hexo server
-```
-
-More info: [Server](https://hexo.io/docs/server.html)
-
-### Generate static files
-
-``` bash
-$ hexo generate
-```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+。。。

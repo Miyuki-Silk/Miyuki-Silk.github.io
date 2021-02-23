@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Miyuki
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
+author: Ò¶ÄªÓÆ
 language: en
 timezone: ''
 
@@ -104,27 +104,11 @@ theme: diaspora
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/Miyuki-Silk/Miyuki-Silk.github.io.git
-  branch: master
-  type: git
   repository: https://github.com/Miyuki-Silk/Miyuki-Silk.github.io.git
-  branch: src
-  extend_dirs: /
-  ignore_hidden: false
-  ignore_pattern:
-  public: .
-  node_modules: .
+  branch: master
 
 search:
   path: search.xml
   field: post
   format: html
   limit: 10000
-
-backup:
-    type: git
-	theme: diaspora
-    repository:
-       github: git@github.com:Miyuki-Silk/Miyuki-Silk.github.io.git,backup
-       coding: git@github.com:Miyuki-Silk/Miyuki-Silk.github.io.git,backup
-
