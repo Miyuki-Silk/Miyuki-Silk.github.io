@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en" class="loading">
+<html lang="zh-CN" class="loading">
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -10,14 +10,16 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Fechin,"> 
-    <meta name="description" content="https://www.acwing.com/problem/content/136/
-真的是一道十分困难的题目！
+    <meta name="description" content="真的是一道十分困难的题目！
 （但是和双端队列一点关系也没有）
 
 
 第一步想到的果然还是模拟与构造。
-但是按照样,"> 
-    <meta name="author" content="ҶĪ��"> 
+但是按照样例的提示来做的话十分不方便，因为存在一个输入顺序的问题。
+反向思考来试试？
+
+因为最后合,"> 
+    <meta name="author" content="叶莫悠"> 
     <link rel="alternative" href="atom.xml" title="Miyuki" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
     
@@ -70,8 +72,7 @@
 
         </div>
         <div class="content markdown">
-            <p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/136/" title="题目来源">https://www.acwing.com/problem/content/136/</a></p>
-<h2 id="真的是一道十分困难的题目！"><a href="#真的是一道十分困难的题目！" class="headerlink" title="真的是一道十分困难的题目！"></a>真的是一道十分困难的题目！</h2><blockquote>
+            <h2 id="真的是一道十分困难的题目！"><a href="#真的是一道十分困难的题目！" class="headerlink" title="真的是一道十分困难的题目！"></a>真的是一道十分困难的<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/136/">题目</a>！</h2><blockquote>
 <p>（但是和双端队列一点关系也没有）</p>
 </blockquote>
 <hr>
@@ -84,6 +85,140 @@
 <blockquote>
 <p>A[ ]来存储数字的大小 ， B[ ]来存储读入的顺序</p>
 </blockquote>
+<p>用样例来说明的话，就是：</p>
+<pre><code>A[] = &#123;0 , 3 , 3 , 6 , 6 , 9&#125;
+B[] = &#123;3 , 1 , 6 , 2 , 5 , 4&#125;</code></pre>
+
+<p>那么最终合成的大队列应该是A[ ]的形式的。</p>
+<p>而且达达同学用的是双端队列，不放我们来模拟一下她的做法吧！</p>
+<table>
+<thead>
+<tr>
+<th align="center">顺序读入</th>
+<th align="center">操作</th>
+<th align="center">队列</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">3</td>
+<td align="center">存入队列A</td>
+<td align="center">A[ ] = {3} ; B[ ] = {}</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">存入队列B</td>
+<td align="center">A[ ] = {3} ; B[ ] = {6}</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">插入队列A队头</td>
+<td align="center">A[ ] = {0,3} ; B[ ] = {6}</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center">插入队列B队尾</td>
+<td align="center">A[ ] = {0,3} ; B[ ] = {6,9}</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">插入队列B队头</td>
+<td align="center">A[ ] = {0,3} ; B[ ] = {6,6,9}</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">插入队列A队尾</td>
+<td align="center">A[ ] = {0,3,3} ; B[ ] = {6,6,9}</td>
+</tr>
+</tbody></table>
+<p>合成的大队列：</p>
+<pre><code>C[] = &#123;0 , 3 , 3 , 6 , 6 , 9&#125;</code></pre>
+
+<p>我们观察后可以发现，与按照数字大小排序以后的读入顺序有关，例如，对于A[ ] = {0，3，3}来说，它的顺序B[ ] = {3，1，6}是一个单谷函数。</p>
+<p>在谷底的时候读入，而后在递减的那一段插在队头，在递增的那一段插在队尾。</p>
+<p><strong>别走！！！真正的难点才刚来！！！</strong></p>
+<blockquote>
+<p>如果两个数一样，那么他们的读入顺序该如何排序呢？</p>
+</blockquote>
+<p>可想而知的是应该尽可能的形成递减或者递增。</p>
+<p>例如：</p>
+<pre><code>A[] = &#123;6 , 6 , 9&#125;
+B[] = &#123;2 , 5 , 4&#125;</code></pre>
+
+<p>就是明显不对的，应该改为：</p>
+<pre><code>B[] = &#123;5 , 2 , 4&#125;</coed></pre>
+
+<p>还可以看出一件值得注意的事情：<strong>数字相同的话，读入顺序的排序是可以随意交换的</strong>。</p>
+<p>对于两个相同的数字，只要合并成一个，那就可以了是吧？</p>
+<pre><code>#pragma GCC optimize(3,"Ofast","inline")//O3只是皮一下（诶嘿~）
+#include<bits/stdc++.h>
+#define PII pair<int,int>
+using namespace std ;
+const int N = 200005 ;
+
+inline int read() 
+&#123;
+    int x = 0 , f = 1 ; char ch = getchar() ;
+    while(!isdigit(ch)) &#123;if(ch == '-') f = -1 ; ch = getchar() ;&#125;
+    while(isdigit(ch)) &#123;x = (x << 1) + (x << 3) + ch-48 ; ch = getchar() ;&#125;
+    return x * f ;
+&#125;
+
+inline void write(int x)
+&#123;
+    if(x < 0) x = ~x + 1 , putchar('-') ;
+    if(x > 9) write(x / 10) ;
+    putchar(x % 10 + '0') ;
+&#125;
+
+int n , cnt , ans , maxx[N] , minx[N] , h = INT_MAX ;
+bool f = true ;// f == true 则代表当前为递减
+PII p[N] ;
+int a[N] ;
+
+bool cmp(PII a , PII b)
+&#123;
+    if(a.first == b.first) return a.second < b.second ;
+    return a.first < b.first ;
+&#125;
+
+signed main()
+&#123;
+    n = read() ;
+    for(int i = 1 ; i <= n ; ++ i)
+        p[i].first = read() , p[i].second = i ;//合并相同的数的操作
+    sort(p + 1 , p + 1 + n) ;
+    for(int i = 1 ; i <= n ; ++ i)
+        if(p[i].first != p[i - 1].first || i == 1)
+        &#123;
+            maxx[cnt] = p[i - 1].second ;
+            minx[++ cnt] = p[i].second ;
+        &#125;
+    maxx[cnt] = p[n].second ;
+    
+    for(int i = 1 ; i <= cnt ; ++ i)
+    &#123;
+        if(f)
+        &#123;
+            if(h < minx[i])
+                h = maxx[i] ;
+            else
+                h = minx[i] , ans ++ , f = false ;//说明现在到达谷顶了，需要再来一个队列
+        &#125;
+        else
+        &#123;
+            if(h > maxx[i])
+                h = minx[i] ;
+            else
+                h = maxx[i] , f = true ;//到达谷底，更新f
+        &#125;
+    &#125;
+    write(ans) ;
+        
+    return 0 ;
+&#125;</code></pre>
+
+<p>emmm……</p>
+<p>题到这里就完啦，应该不会有人看不懂吧？（逃~~~）</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
