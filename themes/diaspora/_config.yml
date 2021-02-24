@@ -1,4 +1,4 @@
-﻿# 头部菜单，title: link
+# 头部菜单，title: link
 menu:
   首页: /
   分类: /categories
@@ -59,7 +59,8 @@ beian:
     link: http://www.beian.miit.gov.cn
 
 # 是否使用mathjax
-mathjax: false
+mathjax:
+	enable: true
 
 # Gitalk 评论插件（https://github.com/gitalk/gitalk）
 gitalk:
