@@ -86,53 +86,54 @@
 <p>A[ ]来存储数字的大小 ， B[ ]来存储读入的顺序</p>
 </blockquote>
 <p>用样例来说明的话，就是：</p>
-<pre><code>A[] = &#123;0 , 3 , 3 , 6 , 6 , 9&#125;
-B[] = &#123;3 , 1 , 6 , 2 , 5 , 4&#125;</code></pre>
-
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A[] = &#123;<span class="number">0</span> , <span class="number">3</span> , <span class="number">3</span> , <span class="number">6</span> , <span class="number">6</span> , <span class="number">9</span>&#125;</span><br><span class="line">B[] = &#123;<span class="number">3</span> , <span class="number">1</span> , <span class="number">6</span> , <span class="number">2</span> , <span class="number">5</span> , <span class="number">4</span>&#125;</span><br></pre></td></tr></table></figure>
 <p>那么最终合成的大队列应该是A[ ]的形式的。</p>
 <p>而且达达同学用的是双端队列，不放我们来模拟一下她的做法吧！</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">顺序读入</th>
-<th align="center">操作</th>
-<th align="center">队列</th>
+<th style="text-align:center">顺序读入</th>
+<th style="text-align:center">操作</th>
+<th style="text-align:center">队列</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">3</td>
-<td align="center">存入队列A</td>
-<td align="center">A[ ] = {3} ; B[ ] = {}</td>
+<tbody>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">存入队列A</td>
+<td style="text-align:center">A[ ] = {3} ; B[ ] = {}</td>
 </tr>
 <tr>
-<td align="center">6</td>
-<td align="center">存入队列B</td>
-<td align="center">A[ ] = {3} ; B[ ] = {6}</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">存入队列B</td>
+<td style="text-align:center">A[ ] = {3} ; B[ ] = {6}</td>
 </tr>
 <tr>
-<td align="center">0</td>
-<td align="center">插入队列A队头</td>
-<td align="center">A[ ] = {0,3} ; B[ ] = {6}</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">插入队列A队头</td>
+<td style="text-align:center">A[ ] = {0,3} ; B[ ] = {6}</td>
 </tr>
 <tr>
-<td align="center">9</td>
-<td align="center">插入队列B队尾</td>
-<td align="center">A[ ] = {0,3} ; B[ ] = {6,9}</td>
+<td style="text-align:center">9</td>
+<td style="text-align:center">插入队列B队尾</td>
+<td style="text-align:center">A[ ] = {0,3} ; B[ ] = {6,9}</td>
 </tr>
 <tr>
-<td align="center">6</td>
-<td align="center">插入队列B队头</td>
-<td align="center">A[ ] = {0,3} ; B[ ] = {6,6,9}</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">插入队列B队头</td>
+<td style="text-align:center">A[ ] = {0,3} ; B[ ] = {6,6,9}</td>
 </tr>
 <tr>
-<td align="center">3</td>
-<td align="center">插入队列A队尾</td>
-<td align="center">A[ ] = {0,3,3} ; B[ ] = {6,6,9}</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">插入队列A队尾</td>
+<td style="text-align:center">A[ ] = {0,3,3} ; B[ ] = {6,6,9}</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>合成的大队列：</p>
-<pre><code>C[] = &#123;0 , 3 , 3 , 6 , 6 , 9&#125;</code></pre>
-
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C[] = &#123;<span class="number">0</span> , <span class="number">3</span> , <span class="number">3</span> , <span class="number">6</span> , <span class="number">6</span> , <span class="number">9</span>&#125;</span><br></pre></td></tr></table></figure>
 <p>我们观察后可以发现，与按照数字大小排序以后的读入顺序有关，例如，对于A[ ] = {0，3，3}来说，它的顺序B[ ] = {3，1，6}是一个单谷函数。</p>
 <p>在谷底的时候读入，而后在递减的那一段插在队头，在递增的那一段插在队尾。</p>
 <p><strong>别走！！！真正的难点才刚来！！！</strong></p>
@@ -141,82 +142,11 @@ B[] = &#123;3 , 1 , 6 , 2 , 5 , 4&#125;</code></pre>
 </blockquote>
 <p>可想而知的是应该尽可能的形成递减或者递增。</p>
 <p>例如：</p>
-<pre><code>A[] = &#123;6 , 6 , 9&#125;
-B[] = &#123;2 , 5 , 4&#125;</code></pre>
-
-<p>就是明显不对的，应该改为：</p>
-<pre><code>B[] = &#123;5 , 2 , 4&#125;</coed></pre>
-
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A[] = &#123;<span class="number">6</span> , <span class="number">6</span> , <span class="number">9</span>&#125;</span><br><span class="line">B[] = &#123;<span class="number">2</span> , <span class="number">5</span> , <span class="number">4</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>就是明显不对的，应该改为：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">B[] = &#123;<span class="number">5</span> , <span class="number">2</span> , <span class="number">4</span>&#125;</span><br></pre></td></tr></table></figure></p>
 <p>还可以看出一件值得注意的事情：<strong>数字相同的话，读入顺序的排序是可以随意交换的</strong>。</p>
 <p>对于两个相同的数字，只要合并成一个，那就可以了是吧？</p>
-<pre><code>#pragma GCC optimize(3,"Ofast","inline")//O3只是皮一下（诶嘿~）
-#include<bits/stdc++.h>
-#define PII pair<int,int>
-using namespace std ;
-const int N = 200005 ;
-
-inline int read() 
-&#123;
-    int x = 0 , f = 1 ; char ch = getchar() ;
-    while(!isdigit(ch)) &#123;if(ch == '-') f = -1 ; ch = getchar() ;&#125;
-    while(isdigit(ch)) &#123;x = (x << 1) + (x << 3) + ch-48 ; ch = getchar() ;&#125;
-    return x * f ;
-&#125;
-
-inline void write(int x)
-&#123;
-    if(x < 0) x = ~x + 1 , putchar('-') ;
-    if(x > 9) write(x / 10) ;
-    putchar(x % 10 + '0') ;
-&#125;
-
-int n , cnt , ans , maxx[N] , minx[N] , h = INT_MAX ;
-bool f = true ;// f == true 则代表当前为递减
-PII p[N] ;
-int a[N] ;
-
-bool cmp(PII a , PII b)
-&#123;
-    if(a.first == b.first) return a.second < b.second ;
-    return a.first < b.first ;
-&#125;
-
-signed main()
-&#123;
-    n = read() ;
-    for(int i = 1 ; i <= n ; ++ i)
-        p[i].first = read() , p[i].second = i ;//合并相同的数的操作
-    sort(p + 1 , p + 1 + n) ;
-    for(int i = 1 ; i <= n ; ++ i)
-        if(p[i].first != p[i - 1].first || i == 1)
-        &#123;
-            maxx[cnt] = p[i - 1].second ;
-            minx[++ cnt] = p[i].second ;
-        &#125;
-    maxx[cnt] = p[n].second ;
-    
-    for(int i = 1 ; i <= cnt ; ++ i)
-    &#123;
-        if(f)
-        &#123;
-            if(h < minx[i])
-                h = maxx[i] ;
-            else
-                h = minx[i] , ans ++ , f = false ;//说明现在到达谷顶了，需要再来一个队列
-        &#125;
-        else
-        &#123;
-            if(h > maxx[i])
-                h = minx[i] ;
-            else
-                h = maxx[i] , f = true ;//到达谷底，更新f
-        &#125;
-    &#125;
-    write(ans) ;
-        
-    return 0 ;
-&#125;</code></pre>
-
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> GCC optimize(3,<span class="meta-string">&quot;Ofast&quot;</span>,<span class="meta-string">&quot;inline&quot;</span>)<span class="comment">//O3只是皮一下（诶嘿~）</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PII pair<span class="meta-string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span> ;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">200005</span> ;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> x = <span class="number">0</span> , f = <span class="number">1</span> ; <span class="keyword">char</span> ch = getchar() ;</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(ch)) &#123;<span class="keyword">if</span>(ch == <span class="string">&#x27;-&#x27;</span>) f = <span class="number">-1</span> ; ch = getchar() ;&#125;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(ch)) &#123;x = (x &lt;&lt; <span class="number">1</span>) + (x &lt;&lt; <span class="number">3</span>) + ch<span class="number">-48</span> ; ch = getchar() ;&#125;</span><br><span class="line">	<span class="keyword">return</span> x * f ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(x &lt; <span class="number">0</span>) x = ~x + <span class="number">1</span> , <span class="built_in">putchar</span>(<span class="string">&#x27;-&#x27;</span>) ;</span><br><span class="line">	<span class="keyword">if</span>(x &gt; <span class="number">9</span>) write(x / <span class="number">10</span>) ;</span><br><span class="line">	<span class="built_in">putchar</span>(x % <span class="number">10</span> + <span class="string">&#x27;0&#x27;</span>) ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n , cnt , ans , maxx[N] , minx[N] , h = INT_MAX ;</span><br><span class="line"><span class="keyword">bool</span> f = <span class="literal">true</span> ;<span class="comment">// f == true 则代表当前为递减</span></span><br><span class="line">PII p[N] ;</span><br><span class="line"><span class="keyword">int</span> a[N] ;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(PII a , PII b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(a.first == b.first) <span class="keyword">return</span> a.second &lt; b.second ;</span><br><span class="line">	<span class="keyword">return</span> a.first &lt; b.first ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	n = read() ;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= n ; ++ i)</span><br><span class="line">		p[i].first = read() , p[i].second = i ;<span class="comment">//合并相同的数的操作</span></span><br><span class="line">	sort(p + <span class="number">1</span> , p + <span class="number">1</span> + n) ;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= n ; ++ i)</span><br><span class="line">		<span class="keyword">if</span>(p[i].first != p[i - <span class="number">1</span>].first || i == <span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			maxx[cnt] = p[i - <span class="number">1</span>].second ;</span><br><span class="line">			minx[++ cnt] = p[i].second ;</span><br><span class="line">		&#125;</span><br><span class="line">	maxx[cnt] = p[n].second ;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= cnt ; ++ i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(f)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(h &lt; minx[i])</span><br><span class="line">				h = maxx[i] ;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				h = minx[i] , ans ++ , f = <span class="literal">false</span> ;<span class="comment">//说明现在到达谷顶了，需要再来一个队列</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(h &gt; maxx[i])</span><br><span class="line">				h = minx[i] ;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				h = maxx[i] , f = <span class="literal">true</span> ;<span class="comment">//到达谷底，更新f</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	write(ans) ;</span><br><span class="line">		</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>emmm……</p>
 <p>题到这里就完啦，应该不会有人看不懂吧？（逃~~~）</p>
 
@@ -326,6 +256,25 @@ signed main()
 </div>
 
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 
 
