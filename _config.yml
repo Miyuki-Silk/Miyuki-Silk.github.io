@@ -7,8 +7,8 @@ title: Miyuki
 subtitle: ''
 description: ''
 keywords:
-author: ҶĪ��
-language: en
+author: 叶莫悠
+language: zh-CN
 timezone: ''
 
 # URL
@@ -49,8 +49,8 @@ highlight:
   line_number: true
   auto_detect: false
   tab_replace: ''
-  wrap: true
-  hljs: false
+  wrap:
+  hljs: true
 prismjs:
   enable: false
   preprocess: true
@@ -112,3 +112,6 @@ search:
   field: post
   format: html
   limit: 10000
+
+aplayer:
+  asset_inject: false
