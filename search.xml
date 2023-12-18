@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>诗篇【1】再一次告白</title>
+      <link href="/2023/12/17/%E8%AF%97%E7%AF%87%E3%80%901%E3%80%91%E5%86%8D%E4%B8%80%E6%AC%A1%E5%91%8A%E7%99%BD/"/>
+      <url>/2023/12/17/%E8%AF%97%E7%AF%87%E3%80%901%E3%80%91%E5%86%8D%E4%B8%80%E6%AC%A1%E5%91%8A%E7%99%BD/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">骑着自行车在校园的大陆上</span><br><span class="line"></span><br><span class="line">银杏叶是否感受得到</span><br><span class="line"></span><br><span class="line">那天边炽红的夕阳</span><br><span class="line"></span><br><span class="line">翩翩落下</span><br><span class="line"></span><br><span class="line">在帽子里，在车筐里，在我脸上</span><br><span class="line"></span><br><span class="line">晃晃头，仿佛看见，你在我前方，彷徨</span><br><span class="line"></span><br><span class="line">想和你，</span><br><span class="line"></span><br><span class="line">一起飞行，一起坠落</span><br><span class="line"></span><br><span class="line">一起牵手，一起承诺</span><br><span class="line"></span><br><span class="line">在这银杏树下</span><br><span class="line"></span><br><span class="line">在这人来人往的大道旁</span><br><span class="line"></span><br><span class="line">再一次对你告白</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 杂文 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 诗 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>TEST</title>
+      <link href="/2023/12/17/TEST/"/>
+      <url>/2023/12/17/TEST/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">文字测试：</span><br></pre></td></tr></table></figure><p>Hello, World!</p><p>你好，世界！</p><p>ハローワールド！</p><h1 id="一级标题"><a class="markdownIt-Anchor" href="#一级标题"></a> 一级标题</h1><h2 id="二级标题"><a class="markdownIt-Anchor" href="#二级标题"></a> 二级标题</h2><h3 id="三级标题"><a class="markdownIt-Anchor" href="#三级标题"></a> 三级标题</h3><h4 id="四级标题"><a class="markdownIt-Anchor" href="#四级标题"></a> 四级标题</h4><h5 id="五级标题"><a class="markdownIt-Anchor" href="#五级标题"></a> 五级标题</h5><h6 id="六级标题"><a class="markdownIt-Anchor" href="#六级标题"></a> 六级标题</h6><p>正文直接输入</p><p>换行需要在代码块中多换一行</p><p>展示文字用</p><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Hello,</span> World!</span><br></pre></td></tr></table></figure><p>如果要显示一行代码:</p><p><code>printf(&quot;Hello, World\n&quot;);</code></p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;Hello, World!\n&quot;</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>行内代码这样用<code>Hello, World!</code></p><p>有序列表数字+.+空格：</p><ol><li>Hello</li><li>World<ol><li>Hello<ol><li>World<ol><li>Hello<ol><li>World</li></ol></li></ol></li></ol></li></ol></li></ol><p>无序列表-+空格：</p><ul><li>Hello</li><li>World<ul><li>Hello<ul><li>World<ul><li>Hello<ul><li>World</li></ul></li></ul></li></ul></li></ul></li></ul><p><strong>加粗</strong></p><p><em>倾斜</em></p><p>分割线:</p><hr /><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2><h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网站 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 无 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
